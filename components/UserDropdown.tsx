@@ -19,7 +19,7 @@ const UserDropdown = () => {
     const router = useRouter();
 
     const handleSignOut = async () => {
-        router.push(href,"/sign-in");
+        router.push("/sign-in");
     }
 
     const user= {name: 'John', email: 'contact@jmastery.com'};
@@ -63,7 +63,7 @@ const UserDropdown = () => {
                     <LogOut className='h-4 w-4 mr-2 hidden sm:block'/>
                     Logout
                     </DropdownMenuItem>
-                <DropdownMenuSeparator className='hidden sm:blockbg-gray-600'/>
+                <DropdownMenuSeparator className='hidden sm:block bg-gray-600'/>
                 <nav className="sm:hidden">
                     <NavItems/>
                 </nav>
