@@ -19,7 +19,7 @@ const UserDropdown = () => {
     const router = useRouter();
 
     const handleSignOut = async () => {
-        router.push(href,"/sign-in");
+        router.push("/sign-in");
     }
 
     const user= {name: 'John', email: 'contact@jmastery.com'};
