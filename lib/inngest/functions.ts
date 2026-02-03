@@ -59,8 +59,9 @@ export const sendDailyNewsSummary = inngest.createFunction(
 
         // Step #2: For each user, get watchlist symbols -> fetch news (fallback to general)
         const results = await step.run('fetch-user-news', async () => {
-            const perUser: Array<{ user: User; articles: MarketNewsArticle[] }> = [];
-            for (const user of users as User[]) {
+            type NewsEmailUser = { id: string; email: string; name: string };
+            const perUser: Array<{ user: NewsEmailUser; articles: MarketNewsArticle[] }> = [];
+            for (const user of users) {
                 try {
                     const symbols = await getWatchlistSymbolsByEmail(user.email);
                     let articles = await getNews(symbols);
